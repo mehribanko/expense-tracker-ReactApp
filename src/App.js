@@ -29,7 +29,6 @@ function App() {
   return (
     <div>
       <NewExpense/>
-      <DateFilter />
       <Expenses expenses={expenses}/>
     </div>
   );
