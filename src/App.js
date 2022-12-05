@@ -32,7 +32,9 @@ function App() {
 
   const newExpenseHandler = newExpense => {
 
-    setExpenses(...expenses, ...newExpense);
+    setExpenses((prevExpenses) => {
+      return[newExpense, ...prevExpenses];
+    });
 
   } ;
 
