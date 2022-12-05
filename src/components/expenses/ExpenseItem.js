@@ -9,10 +9,6 @@ function ExpenseItem(props){
 
     const [title, setTitle]=useState(props.title);
 
-    const clickHandler=()=>{
-        setTitle("updated");
-        console.log(title);
-    };
 
     return(
         <Card className="expense-item">
@@ -21,11 +17,8 @@ function ExpenseItem(props){
             <ExpenseDate date={props.date}/>
             </div>
             
-
             <div className="expense-item__description"><h2>{title}</h2></div>
             <div className="expense-item__price">${props.amount}</div>
-
-            <button onClick={clickHandler}>Change title</button>
        
         </Card>      
     );
