@@ -1,7 +1,6 @@
 
 import Expenses from "./components/expenses/Expenses";
 import NewExpense from "./components/newexpense/NewExpense";
-import DateFilter from "./components/expenses/DateFilter";
 import { useState } from "react";
 
 const TEMP_EXPENSES= [
@@ -24,18 +23,19 @@ const TEMP_EXPENSES= [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
-]
+];
 
 function App() {
 
   const [expenses, setExpenses] = useState(TEMP_EXPENSES);
 
+
   const newExpenseHandler = newExpense => {
 
+    console.log("from app js ", newExpense);
     setExpenses((prevExpenses) => {
       return[newExpense, ...prevExpenses];
     });
-
   } ;
 
 
