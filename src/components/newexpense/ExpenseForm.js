@@ -31,27 +31,38 @@ import { useState } from 'react';
 
             event.preventDefault();
 
-            // props.onAddNewExpense()
-            console.log("from Expense form", event)
+            const expenseObject = {
+                title: inputTitle,
+                amount: inputAmount,
+                date: new Date(inputDate)
+            }
+
+            props.onAddNewExpense(expenseObject);
+            setInputAmount('');
+            setInputDate('');
+            setInputTitle('');
 
         }
+
+
+    
         return  (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} >
              <div className='new-expense__controls'> 
 
                 <div className='new-expense__control'> 
                     <label>Title</label>
-                    <input type='text' onChange={inputTitleHandler} />
+                    <input type='text' value={inputTitle} onChange={inputTitleHandler} />
                 </div>
 
                 <div className='new-expense__control'> 
                     <label>Amount</label>
-                    <input type='number' min='0.01' step='0.01'  onChange={inputAmountHandler}/>
+                    <input type='number' value={inputAmount} min='0.01' step='0.01'  onChange={inputAmountHandler}/>
                 </div>
 
                 <div className='new-expense__control'> 
                     <label>Date</label>
-                    <input type='date' max='2023-01-01' min='2019-01-01' onChange={inputDateHandler}/>
+                    <input type='date' value={inputDate} max='2023-01-01' min='2019-01-01' onChange={inputDateHandler}/>
                 </div>
             </div>
             <div className='new-expense__actions'>
