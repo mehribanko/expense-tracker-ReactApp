@@ -14,6 +14,7 @@ const NewExpense=(props)=>{
         }
 
         props.onSaveNewExpense(expenseData);
+        setIsFormShown(false);
     }
 
     const showFormHandler = () => {
