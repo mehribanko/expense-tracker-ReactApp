@@ -10,6 +10,7 @@ const ExpensesList = (props) => {
         <ul className="expenses-list">
             { props.filteredArr.map( (expense) => ( 
                 <ExpenseItem 
+                key={expense.id}
                 title={expense.title} 
                 amount={expense.amount}  
                 date={expense.date} 
